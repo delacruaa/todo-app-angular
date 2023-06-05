@@ -1,0 +1,8 @@
+<div   [ngClass]="isDark? 'background__image__dark' :'background__image__light'">
+    
+</div>
+
+<header>
+    <h1>TODO</h1>
+    <img  [src]="!isDark? '/assets/icon-moon.svg' :'/assets/icon-sun.svg'" alt="icon" (click)="changeTheme()">
+</header>

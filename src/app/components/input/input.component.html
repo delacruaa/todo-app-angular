@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <div class="circle">
+     
+    </div>
+    <form (submit)="addTask()">
+        <input [(ngModel)]="inputText"  name="inputText" type="text" class="input"  (input)="clearError()"  type="text" placeholder="Create a new todo..." class="input">
+    </form>
+    <div class="error" *ngIf="errorMessage"> 
+        {{errorMessage}}
+    </div>
+</div>

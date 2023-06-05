@@ -1,0 +1,40 @@
+<div class="wrapper">
+   
+    <div cdkDropList (cdkDropListDropped)="onDrop($event)" class="todo__list">
+        <div class="empty" *ngIf="isEmpty || filteredTasks.length==0">
+            <img src="/assets/empty-list.jpg" alt="empty">
+        </div>
+        <div  class="todo" *ngFor="let todo of filteredTasks" cdkDrag>
+           <div class="content__wrapper">
+                <div class="checkbox__wrapper" (click)="completedTask(todo.id)">
+                    <div [ngClass]="todo.isCompleted ? 'active' :'not__active' ">
+                    </div>
+                </div>
+                <div  [ngClass]="todo.isCompleted ? 'title__completed' :'title' ">
+                   {{todo.description}}
+                </div>
+           </div>
+           <img class="close" src="/assets/icon-close.svg" alt="icon" (click)="deleteTask(todo.id)">
+        </div>
+        
+        <footer>
+            <p>{{filteredTasks.length}} items left</p>
+            <div class="btns">
+                <button  *ngFor="let tab of tabs" [ngClass]="tab==currentTab ? 'btn__active' :'btn' " (click)="changeTab(tab)">
+                  {{tab}}
+                </button>
+               
+            </div>
+            <button class="btn" (click)="clearAllCompleted()">Clear Completed</button>
+        </footer>
+    </div>
+   
+</div>
+
+<div class="btns__wrapper">
+    <div class="btns">
+        <button  *ngFor="let tab of tabs" [ngClass]="tab==currentTab ? 'btn__active' :'btn' " (click)="changeTab(tab)">
+          {{tab}}
+        </button>
+    </div>
+</div>

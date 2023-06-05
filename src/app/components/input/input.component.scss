@@ -1,0 +1,35 @@
+.wrapper {
+    margin-top: 30px;
+    width: 100%;
+    background: var(--main-color);
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--main-color);
+        border: 1px solid var(--circle-border-color);
+    }
+    form {
+        width: 100%;
+        .input {
+            background-color: transparent;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 400;
+            color: var(--todo-text-color);
+            font-size: 16px;
+        }
+    }
+    .error {
+        font-size: 12px;
+        color: var(--red);
+    }
+}
